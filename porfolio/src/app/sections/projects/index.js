@@ -55,7 +55,7 @@ export function Projects() {
     <SectionWrapper id="projects" className="pt-16 xl:pt-22">
       <h2 className="text-4xl xl:text-6xl text-center font-semibold mb-6 xl:mb-16">Projects</h2>
 
-      <div className="grid md:grid-cols-3 gap-6 p-2">
+      <div className="grid md:grid-cols-3 gap-6 p-2 relative z-10">
         {visibleProjects.map((project, index) => (
           <div
             key={index}
@@ -90,7 +90,7 @@ export function Projects() {
       {!showAll && (
         <button
           onClick={() => setShowAll(true)}
-          className="mt-8 mx-auto block bg-black text-white px-6 py-3 rounded-lg hover:opacity-80 transition"
+          className="cursor-pointer relative z-10 mt-8 mx-auto block bg-black text-white px-6 py-3 rounded-lg hover:opacity-80 transition"
         >
           View More
         </button>
@@ -99,7 +99,7 @@ export function Projects() {
         showAll && (
           <button
             onClick={() => setShowAll(false)}
-            className="mt-8 mx-auto block bg-black text-white px-6 py-3 rounded-lg hover:opacity-80 transition"
+            className="cursor-pointer relative z-10 mt-8 mx-auto block bg-black text-white px-6 py-3 rounded-lg hover:opacity-80 transition"
           >
             View Less
           </button>
