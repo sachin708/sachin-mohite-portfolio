@@ -37,6 +37,7 @@ export default function Navbar() {
         }
       });
     };
+    handleScroll();
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -48,7 +49,7 @@ export default function Navbar() {
    <nav
   className="fixed top-4 left-1/2 -translate-x-1/2 z-50 
              flex items-center justify-center
-             bg-white/30 text-black p-2 px-2 rounded-[20px] 
+             bg-white/80 text-black p-2 px-2 rounded-[20px] 
              w-[90%] md:w-auto md:px-6
              xl:max-w-[50%] backdrop-blur-xl shadow-lg"
 >
@@ -80,15 +81,15 @@ export default function Navbar() {
         {/* Mobile dropdown */}
         {open && (
           <div
-            className="w-[70%] absolute top-16 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-4 p-4
-                        bg-[#5a5a92] backdrop-blur-md border-2 rounded-[20px] md:hidden z-100"
+            className="w-[90%] absolute top-16 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-4 p-4
+                        bg-[#FFF] backdrop-blur-md rounded-[20px] md:hidden z-100"
           >
             {nav.map((n) => (
               <button
                 key={n}
                 onClick={() => scroll(n)}
                 className={`w-full capitalize px-2 py-1 rounded transition-colors duration-300 ${
-                  active === n ? "bg-[#c73636]" : "hover:text-gray-300"
+                  active === n ? "bg-[#29dce9] text-xl" : "hover:text-gray-300"
                 }`}
               >
                 {n}

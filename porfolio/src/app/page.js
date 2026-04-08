@@ -11,7 +11,7 @@ import { Stack } from "./sections/stack";
 
 export default function Page() {
   return (
-    <div className="bg-blue-400/30 text-black">
+    <div className="bg-blue-100/30 text-black">
       <BackgroundBeams/>
       <Navbar />
       <div className="flex flex-col">

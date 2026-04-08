@@ -26,7 +26,7 @@ export function Home() {
 
         <h2 className="text-4xl font-bold z-10">Hi, I'm Sachin!</h2>
         <AnimatedRoles />
-       <div className="w-[80%] xl:w-[25%] z-10">
+       <div className="w-[75%] xl:w-[24%] z-10">
         <motion.img
           src="/self-image/optimized_image.png"
           className="rounded-[20px] mt-6  w-full"

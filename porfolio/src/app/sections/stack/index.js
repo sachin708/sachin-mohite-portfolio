@@ -113,7 +113,7 @@ export function Stack() {
       variants={headerStagger}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, amount: 0.3 }}
+      viewport={{ once: true, amount: 0.05 }}
     >
       <h2
         className="text-4xl xl:text-6xl text-center font-semibold mb-6 xl:mb-16"
@@ -123,9 +123,9 @@ export function Stack() {
       <motion.div
         className="w-full grid grid-cols-1 md:grid-cols-3 gap-4 xl:gap-14 p-2"
         variants={cardsStagger}
-        initial="show"
+        initial="hidden"
         whileInView="show"
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: true, amount: 0.05 }}
       >
         {tech.map((t, i) => (
           <motion.div
