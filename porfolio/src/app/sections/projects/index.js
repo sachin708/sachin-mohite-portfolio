@@ -53,7 +53,7 @@ export function Projects() {
 
   return (
     <SectionWrapper id="projects" className="pt-16 xl:pt-22">
-      <h2 className="">Projects</h2>
+      <h2 className="text-4xl xl:text-6xl text-center font-semibold mb-6 xl:mb-16">Projects</h2>
 
       <div className="grid md:grid-cols-3 gap-6 p-2">
         {visibleProjects.map((project, index) => (
