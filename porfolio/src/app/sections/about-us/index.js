@@ -12,7 +12,7 @@ export function About() {
   ];
 
   const handleClick = () => {
-    window.open("/resume/Sachin_Mohite_FlowCV_Resume_2026.pdf", "_blank");
+    window.open("/resume/SachinMohiteCoverLetter.pdf", "_blank");
   }
 
   return (

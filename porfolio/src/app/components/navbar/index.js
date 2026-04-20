@@ -6,7 +6,15 @@ export default function Navbar() {
   const [active, setActive] = useState("home");
   const [mounted, setMounted] = useState(false);
 
-  const nav = ["home", "about", "stack", "services", "projects", "contact"];
+  const nav = [
+    "home",
+    "about",
+    "skills",
+    "services",
+    "projects",
+    "contact",
+    "Resume",
+  ];
 
   const scroll = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -43,27 +51,39 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [mounted]);
 
+  const handleClick = (n) => {
+    if (n === "Resume") {
+      window.open("/resume/Sachin_Mohite_Resume.pdf", "_blank");
+    }  else {
+      scroll(n);
+    }
+  };
+
   if (!mounted) return null;
 
   return (
-   <nav
-  className="fixed top-4 left-1/2 -translate-x-1/2 z-50 
+    <nav
+      className="fixed top-4 left-1/2 -translate-x-1/2 z-50 
              flex items-center justify-center
              bg-white/80 text-black p-2 px-2 rounded-[20px] 
              w-[90%] md:w-auto md:px-6
-             xl:max-w-[50%] backdrop-blur-xl shadow-lg"
->
+             xl:max-w-[75%] backdrop-blur-xl shadow-lg"
+    >
       {/* Desktop menu */}
       <div className="hidden md:flex gap-6 items-center">
         {nav.map((n) => (
           <button
             key={n}
-            onClick={() => scroll(n)}
-            className={`capitalize px-3 py-1 rounded transition-colors duration-300 ${
-              active === n ? "bg-[#f04646] text-white" : "hover:-translate-y-1 hover:scale-105"
+            onClick={() => handleClick(n)}
+            className={`capitalize px-3 py-1 rounded transform transition-all duration-300 ease-in-out ${
+              active === n
+                ? "bg-[#f04646] text-white"
+                : "hover:-translate-y-1 hover:scale-105"
             }`}
           >
-            {n}
+            {
+              n
+            }
           </button>
         ))}
       </div>
@@ -82,17 +102,19 @@ export default function Navbar() {
         {open && (
           <div
             className="w-[90%] absolute top-16 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-4 p-4
-                        bg-[#FFF] backdrop-blur-md rounded-[20px] md:hidden z-100"
+                        bg-[#FFF] backdrop-blur-md rounded-[20px] md:hidden z-[100]"
           >
             {nav.map((n) => (
               <button
                 key={n}
-                onClick={() => scroll(n)}
+                onClick={() => handleClick(n)}
                 className={`w-full capitalize px-2 py-1 rounded transition-colors duration-300 ${
                   active === n ? "bg-[#29dce9] text-xl" : "hover:text-gray-300"
                 }`}
               >
-                {n}
+                {
+                  n
+                }
               </button>
             ))}
           </div>

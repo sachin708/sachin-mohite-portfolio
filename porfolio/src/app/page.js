@@ -6,7 +6,7 @@ import { Contact } from "./sections/contact";
 import { Home } from "./sections/home";
 import { Projects } from "./sections/projects";
 import { Services } from "./sections/services";
-import { Stack } from "./sections/stack";
+import { Skills } from "./sections/skills";
 
 
 export default function Page() {
@@ -17,7 +17,7 @@ export default function Page() {
       <div className="flex flex-col">
       <Home />
       <About />
-      <Stack />
+      <Skills />
       <Services />
       <Projects />
       <Contact />
