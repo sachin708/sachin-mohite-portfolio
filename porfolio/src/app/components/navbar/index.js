@@ -51,13 +51,24 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [mounted]);
 
-  const handleClick = (n) => {
-    if (n === "Resume") {
-      window.open("/resume/Sachin_Mohite_Resume.pdf", "_blank");
-    }  else {
-      scroll(n);
-    }
-  };
+ const handleClick = (n) => {
+  if (n === "Resume") {
+    const fileUrl = "/resume/Sachin_Mohite_Resume.pdf";
+
+    // Open in new tab
+    window.open(fileUrl, "_blank");
+
+    // Force download
+    const link = document.createElement("a");
+    link.href = fileUrl;
+    link.download = "Sachin_Mohite_Resume.pdf"; // file name
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  } else {
+    scroll(n);
+  }
+};
 
   if (!mounted) return null;
 
